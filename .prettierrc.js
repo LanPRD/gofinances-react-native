@@ -8,5 +8,5 @@ module.exports = {
   endOfLine: "lf",
   useTabs: false,
   proseWrap: "never",
-  printWidth: 160
+  printWidth: 120
 };
