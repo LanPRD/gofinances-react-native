@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Amount, Container, Footer, Header, Icon, LastTransaction, Title } from "./styles";
 
 interface HighlightCardProps {

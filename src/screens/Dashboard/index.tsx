@@ -1,5 +1,3 @@
-import React from "react";
-
 import { HighlightCard } from "../../components/HighlightCard";
 import { TransactionCard, TransactionCardProps } from "../../components/TransactionCard";
 
@@ -78,15 +76,29 @@ export function Dashboard() {
       </Header>
 
       <HighlightCardsWrapper>
-        <HighlightCard title="Entradas" amount="R$ 17.400,00" lastTransaction="Última entrada dia 13 de abril" type="up" />
-        <HighlightCard title="Saídas" amount="R$ 1.259,00" lastTransaction="Última entrada dia 03 de abril" type="down" />
+        <HighlightCard
+          title="Entradas"
+          amount="R$ 17.400,00"
+          lastTransaction="Última entrada dia 13 de abril"
+          type="up"
+        />
+        <HighlightCard
+          title="Saídas"
+          amount="R$ 1.259,00"
+          lastTransaction="Última entrada dia 03 de abril"
+          type="down"
+        />
         <HighlightCard title="Total" amount="R$ 16.141,00" lastTransaction="1 à 16 de abril" type="total" />
       </HighlightCardsWrapper>
 
       <Transactions>
         <Title>Listagem</Title>
 
-        <TransactionList data={data} keyExtractor={item => item.id} renderItem={({ item }) => <TransactionCard data={item} />} />
+        <TransactionList
+          data={data}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => <TransactionCard data={item} />}
+        />
       </Transactions>
     </Container>
   );

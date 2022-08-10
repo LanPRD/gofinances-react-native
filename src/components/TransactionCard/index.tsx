@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Amount, Category, CategoryName, Container, Footer, Icon, Title, Date } from "./styles";
 
 export interface TransactionCardProps {
