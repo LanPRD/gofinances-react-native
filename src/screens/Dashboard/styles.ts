@@ -101,3 +101,9 @@ export const TransactionList = styled(
     paddingBottom: getBottomSpace()
   }
 })``;
+
+export const LoadingContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
