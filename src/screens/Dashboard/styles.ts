@@ -3,11 +3,11 @@ import { FlatList, FlatListProps } from "react-native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { getBottomSpace, getStatusBarHeight } from "react-native-iphone-x-helper";
 import { Feather } from "@expo/vector-icons";
-import { BorderlessButton } from "react-native-gesture-handler";
+import { BorderlessButton, GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { DataListProps } from ".";
 
-export const Container = styled.View`
+export const Container = styled(GestureHandlerRootView)`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
 `;
@@ -67,7 +67,7 @@ export const Icon = styled(Feather)`
   font-size: ${RFValue(24)}px;
 `;
 
-export const LogoutButton = styled(BorderlessButton)``;
+export const LogoutButton = styled(BorderlessButton as new (props: any) => BorderlessButton)``;
 
 export const HighlightCardsWrapper = styled.ScrollView.attrs({
   horizontal: true,
