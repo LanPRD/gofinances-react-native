@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Alert, Keyboard, Modal, TouchableWithoutFeedback } from "react-native";
 import { useNavigation, NavigationProp, ParamListBase } from "@react-navigation/native";
 import { useForm } from "react-hook-form";
