@@ -55,3 +55,4 @@ web-build/
 dist/
 
 *-lock.json
+*.lock
