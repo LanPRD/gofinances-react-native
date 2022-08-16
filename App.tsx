@@ -10,9 +10,13 @@ import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold } from
 
 import { NavigationContainer } from "@react-navigation/native";
 
+import { AppProvider } from "./src/context";
+
 import { AppRoutes } from "./src/routes/app.routes";
 
 import theme from "./src/global/styles/theme";
+
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
@@ -33,7 +37,10 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
-        <AppRoutes />
+
+        <AppProvider>
+          <SignIn />
+        </AppProvider>
       </NavigationContainer>
     </ThemeProvider>
   );
