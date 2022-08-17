@@ -1,3 +1,4 @@
+import { Alert, Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 import { useAuth } from "../../context/Auth";
@@ -11,9 +12,25 @@ import LogoSvg from "../../assets/logo.svg";
 import { Footer, FooterWrapper, Header, SignInContainer, SignInTitle, Title, TitleWrapper } from "./styles";
 
 export function SignIn() {
-  const { user } = useAuth();
+  const { signInWithGoogle, signInWithApple } = useAuth();
 
-  console.log(user);
+  async function handleSignInWithGoogle() {
+    try {
+      await signInWithGoogle();
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Oops!", "Não foi possível conectar a conta Google");
+    }
+  }
+
+  async function handleSignInWithApple() {
+    try {
+      await signInWithApple();
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Oops!", "Não foi possível conectar a conta Apple");
+    }
+  }
 
   return (
     <SignInContainer>
@@ -32,8 +49,10 @@ export function SignIn() {
 
       <Footer>
         <FooterWrapper>
-          <SignInSocialButton title="Entrar com Google" svg={GoogleSvg} />
-          <SignInSocialButton title="Entrar com Apple" svg={AppleSvg} />
+          <SignInSocialButton title="Entrar com Google" svg={GoogleSvg} onPress={handleSignInWithGoogle} />
+          {Platform.OS === "ios" && (
+            <SignInSocialButton title="Entrar com Apple" svg={AppleSvg} onPress={handleSignInWithApple} />
+          )}
         </FooterWrapper>
       </Footer>
     </SignInContainer>

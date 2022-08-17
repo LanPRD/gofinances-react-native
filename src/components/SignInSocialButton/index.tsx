@@ -5,6 +5,7 @@ import { ButtonLabel, ImageContainer, SignInSocialButtonContainer } from "./styl
 interface SignInSocialButtonContainerProps {
   title: string;
   svg: React.FC<SvgProps>;
+  onPress: () => void;
 }
 
 export function SignInSocialButton({ title, svg: Svg, ...rest }: SignInSocialButtonContainerProps) {
