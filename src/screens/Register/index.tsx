@@ -8,6 +8,8 @@ import uuid from "react-native-uuid";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import { useAuth } from "../../context/Auth";
+
 import { CategorySelect } from "../CategorySelect";
 
 import { InputForm } from "../../components/Form/InputForm";
@@ -37,6 +39,8 @@ export function Register() {
     key: "category",
     name: "Categoria"
   });
+
+  const { user } = useAuth();
 
   const { navigate }: NavigationProp<ParamListBase> = useNavigation();
 
@@ -72,7 +76,7 @@ export function Register() {
     };
 
     try {
-      const collectionKey = "@gofinance@transactions";
+      const collectionKey = `@gofinance@transactions_user:${user.id}`;
 
       const transactions = await AsyncStorage.getItem(collectionKey);
       const parsedTransaction = transactions ? JSON.parse(transactions) : [];

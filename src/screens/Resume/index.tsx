@@ -9,6 +9,8 @@ import { addMonths, subMonths, format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import { useAuth } from "../../context/Auth";
+
 import { HistoryCard } from "../../components/HistoryCard";
 
 import { categories } from "../../utils/categories";
@@ -47,7 +49,9 @@ export function Resume() {
   const [isLoading, setIsLoading] = useState(false);
   const [totalByCategories, setTotalByCategories] = useState<CategoryData[]>([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
+
   const theme = useTheme();
+  const { user } = useAuth();
 
   function handleChangeDate(action: "next" | "prev") {
     if (action === "next") {
@@ -60,7 +64,7 @@ export function Resume() {
   async function loadData() {
     setIsLoading(true);
 
-    const collectionKey = "@gofinance@transactions";
+    const collectionKey = `@gofinance@transactions_user:${user.id}`;
 
     const response = await AsyncStorage.getItem(collectionKey);
     const dataFormatted: TransactionData[] = response ? JSON.parse(response) : [];
