@@ -8,5 +8,5 @@ import { PublicRoutes } from "./public.routes";
 export function AppRoutes() {
   const { user } = useAuth();
 
-  return <NavigationContainer>{user ? <PrivateRoutes /> : <PublicRoutes />}</NavigationContainer>;
+  return <NavigationContainer>{user.id ? <PrivateRoutes /> : <PublicRoutes />}</NavigationContainer>;
 }
