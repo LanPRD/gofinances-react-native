@@ -6,7 +6,8 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build:android": "expo build:android"
   },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.2",
@@ -40,7 +41,8 @@
     "react-native-web": "0.17.7",
     "styled-components": "^5.3.5",
     "victory-native": "^36.6.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "expo-updates": "~0.13.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

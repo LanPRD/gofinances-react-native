@@ -4,7 +4,12 @@
     "slug": "gofinances",
     "scheme": "gofinances",
     "version": "1.0.0",
-    "android": { "softwareKeyboardLayoutMode": "pan" },
-    "assetBundlePatterns": ["**/*"]
+    "android": {
+      "softwareKeyboardLayoutMode": "pan",
+      "package": "com.lanprd.gofinances"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }
