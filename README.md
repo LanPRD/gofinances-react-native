@@ -65,7 +65,7 @@ $ cd gofinances-react-native
 
 ## 🚧 Imagens do projeto
 
-<div class="images">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
   <img src="public/images/login.png" alt="drawing" width="200">
   <br>
   <img src="public/images/form.png" alt="drawing" width="200">
@@ -80,11 +80,3 @@ $ cd gofinances-react-native
 <br>
 
 <h6 align="center" font-size="11">Developed by <strong>Allan Prado</strong></h6>
-
-<style>
-  .images {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-  }
-</style>
